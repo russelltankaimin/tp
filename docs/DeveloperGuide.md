@@ -1,4 +1,3 @@
----
 layout: page
 title: Developer Guide
 ---
@@ -42,7 +41,7 @@ title: Developer Guide
        * [Edit Command](#edit-command)
        * [Delete Command](#delete-command)
        * [Tag Command](#tag-command)
-       * [User Command](#user-command)
+       * [View Command](#view-command)
        * [Find Command](#find-command)
        * [Sort Command](#sort-command)
        * [List Command](#list-command)
@@ -426,9 +425,23 @@ The Sequence Diagram below illustrates the interactions within the `Logic` compo
 
 {to be filled by Kenny}
 
-#### **User Command**
+#### **View Command**
 
-{to be filled by Russell}
+There are a total of 3 ways that `ViewCommand` can work.
+The sequence diagram below illustrates the interactions within the `Logic` Component for the
+`execute("view")` API call.
+
+Fruthermore, sequence diagram below illustrates the interactions within the `Logic` Component for the
+`execute("view n/Bee Shan")` API call.
+
+Lastly, sequence diagram below illustrates the interactions within the `Logic` Component for the
+`execute("view 1")` API call.
+
+<div markdown="span" class="alert alert-info">
+
+:information_source: **Note:** The lifeline for `ViewCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+</div>
 
 #### **Find Command**
 
