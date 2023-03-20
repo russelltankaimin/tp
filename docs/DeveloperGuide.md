@@ -428,14 +428,14 @@ The Sequence Diagram below illustrates the interactions within the `Logic` compo
 #### **View Command**
 
 There are a total of 3 ways that `ViewCommand` can work.
-The sequence diagram below illustrates the interactions within the `Logic` Component for the
-`execute("view")` API call.
 
-Fruthermore, sequence diagram below illustrates the interactions within the `Logic` Component for the
-`execute("view n/Bee Shan")` API call.
+The sequence diagram below shows the parser's behaviour when a `view`-type command is called.
 
-Lastly, sequence diagram below illustrates the interactions within the `Logic` Component for the
-`execute("view 1")` API call.
+{Insert View Command Sequence Diagram}
+
+|      <img src="images/ViewParserSequence.png" style="width:90vw">      |
+|:----------------------------------------------------------------------:|
+| _Figure 4.4.6a_ *Sequence Diagram* for parsing `ViewCommand` arguments |
 
 <div markdown="span" class="alert alert-info">
 
