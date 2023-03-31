@@ -1,7 +1,7 @@
 package seedu.address.model.util;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -136,7 +136,7 @@ public class SampleDataUtil {
         return new User(new Name("Linus Richards"),
                 new Phone("90102030"),
                 new Email("linusrichards@gmail.com"),
-                new Station("National University of Singapore"),
+                new Station("Kent Ridge"),
                 new TelegramHandle("@linusrichards"),
                 new ContactIndex(0),
                 getGroupTagSet(),
@@ -187,7 +187,10 @@ public class SampleDataUtil {
      * Returns a sample array of Persons.
      */
     public static List<Person> getSamplePersons() throws FileNotFoundException {
-        File sampleDataFile = new File("src/main/resources/data/sampleData.txt");
+        InputStreamReader sampleDataFile =
+                new InputStreamReader(
+                        SampleDataUtil.class.getClassLoader()
+                                .getResourceAsStream("data/sampleData.txt"));
         Scanner scanner = new Scanner(sampleDataFile);
         List<String> lines = new ArrayList<>();
 

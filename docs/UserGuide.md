@@ -21,7 +21,7 @@ For **experienced users**, you may refer to the [Command Summary](#command-summa
 * [**Table of Contents**](#table-of-contents)
 * [**Overview**](#overview)
   * [**What is EduMate?**](#what-is-edumate)
-  * [**Understanding the Symbols and Colours**](#understanding-the-symbols-and-colours)
+  * [**Understanding the Symbols**](#understanding-the-symbols)
   * [**Glossary**](#glossary)
 * [**Quick Start**](#quick-start)
   * [**System Requirements**](#system-requirements)
@@ -33,10 +33,12 @@ For **experienced users**, you may refer to the [Command Summary](#command-summa
   * [**Profile Panel**](#profile-panel)
   * [**Command Box**](#command-box)
   * [**Command Response**](#command-response)
+  * [**Meet Up Recommendation Panel**](#meet-up-recommendation-panel)
+  * [**Scheduled Meet Up Panel**](#scheduled-meet-up-panel)
 * [**Set Your Own Profile**](#set-your-own-profile)
 * [**Commands**](#commands)
   * [**How to interpret the command format**](#how-to-interpret-the-command-format)
-  * [**Arguments**](#arguments)
+  * [**Attributes**](#attributes)
   * [**Basic Commands**](#basic-commands)
     * [**Add a contact `add`**](#add-a-contact-add)
     * [**View a contact's profile `view`**](#view-a-contacts-profile-view)
@@ -53,7 +55,10 @@ For **experienced users**, you may refer to the [Command Summary](#command-summa
     * [**Save a copy of EduMate `save`**](#save-a-copy-of-edumate-save)
     * [**Load a copy of EduMate `load`**](#load-a-copy-of-edumate-load)
   * [**Meet Commands**](#meet-commands)
-    * [**Suggest places to meet with your contacts `meet`**](#suggest-places-to-meet-with-your-contacts-meet)
+    * [**Suggest places to meet with your contacts `meet`**](#meet-commands)
+  * [**Schedule Commands**](#schedule-commands)
+    * [**Organise a meet up with your contacts `organise`**](#organise-a-meet-up-organise)
+    * [**Unorganise a meet up with your contacts `unorganise`**](#unorganise-a-meet-up-unorganise)
 * [**Other Commands**](#other-commands)
     * [**Exit the application `exit`**](#exit-the-application)
 * [**FAQ**](#faq)
@@ -164,23 +169,70 @@ A member of our core team will attend to you as soon as possible.
 
 ## User Interface
 
-{to be filled in}
+`EduMate`'s UI components are built using FXML and JavaFX. Each of the UI components are built to fulfil a specific functionality. We also used light purple and white as our main colour scheme as they are cool colours.
+
+![Ui](images/UG_ui_pictures/user_interface.png)
+<center>Diagram 2: <code>EduMate</code>'s UI</center>
 
 ### Person List
 
-{to be filled in}
+You may locate the Person List at the center-left of `EduMate`. This is where you will see all your saved contacts (or sample data if you are trying out for the first time).
+
+<img src="images/UG_ui_pictures/contact_list.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 3: Person List with some contacts displayed.</center>
 
 ### Profile Panel
 
-{to be filled in}
+The Profile Panel allows you to display your own or your contact's information.
+
+The Profile Panel will display basic information like your / contact's name, phone number, email address, nearest home station and the modules you are taking in NUS.
+
+<img src="images/UG_ui_pictures/user_profile.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 4: Sample user profile displayed on Profile Panel.</center>
 
 ### Command Box
 
-{to be filled in}
+The Command Box is where you can input the [Commands](#commands) when using `EduMate`.
+
+The Command Box is located at the bottom of the application. You may refer to the [User Interface](#user-interface) section to locate it.
+
+<div markdown="span" class="alert alert-success">
+
+:bulb: **Pro Tip:** <br>
+Did you know that the UP and DOWN arrow keys can be used to quickly access previously typed commands in the Command Box? This feature has been specially designed for you to save time and increase your productivity.<br>
+<br>
+In the current session, all of your previously typed commands can be accessed using the UP and DOWN arrow keys. Additionally, we automatically save up to 100 of your most recent commands to a file for your convenience in the next session. This way, you can easily refer back to your previous commands without having to retype them, saving you time and increasing your efficiency.
+
+</div>
 
 ### Command Response
 
-{to be filled in}
+The Command Response box is where you will receive feedback for any command you execute. It could give you some information if the command execution was successful or if you had executed a command of an invalid format.
+
+The Command Response box is located directly below the [Profile Panel](#profile-panel) and above the [Command Box](#command-box).
+
+<img src="images/UG_ui_pictures/command_feedback.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 5: Successful command execution feedback shown</center>
+
+### Meet Up Recommendation Panel
+
+The Meet Up Recommendation Panel (located at the top right of `EduMate`) suggests recommendations of optimal timings and locations
+where you can meet your friends.
+
+<img src="images/UG_ui_pictures/recommender_panel.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 6: Recommended timings and locations for meetups displayed</center>
+
+### Scheduled Meet Up Panel
+
+The Scheduled Meet Up Panel (located directly to the right of [Profile Panel](#profile-panel)) will show your confirmed meetings with your contacts.
+
+<img src="images/UG_ui_pictures/meetup_panel.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 7: Sample scheduled meet ups displayed.</center>
 
 [Return to the top](#table-of-contents)
 
@@ -197,7 +249,7 @@ s/[NEAREST MRT STATION TO YOUR HOUSE] e/[YOUR EMAIL]`
 <br>
 <div markdown="span" class="alert alert-success">
 
-:bulb: **Tip:** 
+:bulb: **Tip:** <br>
 You do not have to enter all your information at once! You can omit some of the information
 and **its corresponding prefix** and enter them in the future!
 <br>
@@ -370,8 +422,13 @@ You can easily add a new contact to EduMate using the `add` command. This allows
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/add_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 8: A new contact: Weixiang is added to <code>EduMate</code>.</center>
+
+##### Explanation:
+The `add` command creates a new contact for a friend named Weixiang whose information does not exist in `EduMate` yet. The contact will be assigned index 101 and his information profile will be shown on the Profile Panel.
 
 <div markdown="block" class="alert alert-success">
 
@@ -419,9 +476,14 @@ The `view` command retrieves either the user's information or the contact's info
 * `view n/NAME`: Views the contact with name `NAME`.
 
 </div>
+
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/view_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 9: Weixiang's profile displayed after execution of the <code>view</code> command</center>
+
+<br>
 
 <div markdown="block" class="alert alert-success">
 
@@ -445,8 +507,16 @@ With EduMate's `edit` command, you can easily update the profile of a contact. Y
 
 </div>
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/edit_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 10: MRT station nearest to his home updated to Little India after execution of the <code>edit</code>command.</center>
+
+<br>
+
+##### Explanation:
+Suppose you realised that Weixiang has just moved house and the nearest MRT station from his house is Little India. Running
+`edit 101 s/Little India` will update the nearest station recorded on his profile.
 
 <div markdown="block" class="alert alert-success">
 
@@ -469,8 +539,10 @@ If you no longer need a contact in EduMate, you can remove them using the `delet
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/delete_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 11: Weixiang's contact deleted after execution of the <code>delete</code>command.</center>
 
 <div markdown="block" class="alert alert-success">
 
@@ -481,7 +553,7 @@ What you should see:<br>
 
 ### Add a label to a contact `tag`
 
-With Edumate's `tag` command, you can tag your existing contacts with groups and modules using this command. You can also assign lessons to the contacts to indicate their availability during specific time periods. This will enable EduMate to suggest more suitable meet up times when using the `meet` command.
+With EduMate's `tag` command, you can tag your existing contacts with groups and modules using this command. You can also assign lessons to the contacts to indicate their availability during specific time periods. This will enable EduMate to suggest more suitable meet up times when using the `meet` command.
 
 <div markdown="block" class="alert alert-info">
 
@@ -497,8 +569,16 @@ With Edumate's `tag` command, you can tag your existing contacts with groups and
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/tag_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 12: Amirah tagged with CS2109S Module Tag with a lesson from 4pm - 6pm on a Monday</center>
+
+
+##### Explanation:
+
+Say you know that Amirah has got a CS2109S lesson from 4pm - 6pm, tagging CS2109S with the lesson information will allow you result in
+CS2109S tag displaying at her profile in the Profile Panel.
 
 <div markdown="block" class="alert alert-success">
 
@@ -534,8 +614,17 @@ With EduMate's `untag` command, you can remove groups or modules from your exist
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/untag_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 13: Amirah after removing the CS2109S Module Tag.</center>
+
+<br>
+
+##### Explanation:
+Say you realise that Amirah accidentally told you the wrong information, you can remove the CS2109S module tag
+with the `untag 1 m/CS2109S MONDAY  16 18` command. The tag will disappear from Amirah's profile in the Profile Panel. 
+
 
 <div markdown="block" class="alert alert-success">
 
@@ -564,9 +653,6 @@ With the `list` command, you can get EduMate to display all your contacts in the
 
 </div>
 
-What you should see:<br>
-{GUI}<br>
-{Explanation}
 
 ## Advanced Commands
 
@@ -592,8 +678,17 @@ The command can also be used with multiple prefixes to refine your search. The r
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/find_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 14: Only contacts tagged with CCA and CS2100 are shown.</center>
+
+<br>
+
+##### Explanation:
+
+Say you want to filter out contacts who are in the same CCA as you to study for the upcoming finals for CS2100. `find g/CCA m/CS2100`
+will filter out contacts who have are tagged with CCA and CS2100.
 
 <div markdown="block" class="alert alert-success">
 
@@ -602,6 +697,8 @@ What you should see:<br>
 * `find m/CS2103T CS2109S`: Returns all persons with modules CS2103T or CS2109S
 * `find n/Edward Richards`: Returns all persons with names Edward or Richards
 * `find p/9093`: Returns all persons with phone numbers starting with 9093
+* `find n/Edward m/CS2103T` : Returns all persons with name Edward and module CS2103T
+* `find n/Edward Richards m/CS2103T CS2109S` : Returns all persons named Edward or Richards with module CS2103T or CS2109S.
 
 </div>
 
@@ -613,6 +710,16 @@ What you should see:<br>
 * Only the field specified by the prefix is searched. e.g. n/ means only the name field is searched
 * Words matching the first part of the string will be matched e.g. Han will match Hans
 * Persons matching at least one keyword will be returned (i.e. OR search). e.g. Hans Bo will return Hans Gruber, Bo Yang
+
+</div>
+
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Filtered list**<br>
+
+* The `find` command returns a filtered list, so command operations only work on persons present in the filtered list.<br>
+  e.g. If the filtered list does not contain any person with contact index 2, any operation relating to contact index 2 will throw error.
+* If you want to run commands related to persons not in the filtered list, just run the `list` command to obtain the full list of your contacts.
 
 </div>
 
@@ -651,8 +758,18 @@ We will now teach you how to effectively use the `sort` command.
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/sort_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 16: Contacts ranked according to sorting criteria specified in the Command Box</center>
+
+<br>
+
+##### Explanation:
+
+The command `sort m/d n/a` would mean that `EduMate` would first sort contacts by decreasing number of common modules with you, and tie-break by increasing alphabetical order.
+
+Hence, Alex Quinn is ranked higher than Astrid Holland as Alex's name is lexicographically smaller than Astrid even though they share the same common modules as you.
 
 <div markdown="block" class="alert alert-success">
 
@@ -688,9 +805,6 @@ Using the `save` command in EduMate, you can easily save your data into a file w
 
 </div>
 
-What you should see:<br>
-{GUI}<br>
-{Explanation}
 
 <div markdown="block" class="alert alert-success">
 
@@ -709,11 +823,6 @@ Using the `load` command in EduMate, you can easily load a previously saved data
 * `load FILENAME`: Loads the EduMate from a file at `FILENAME.json`.
 
 </div>
-
-
-What you should see:<br>
-{GUI}<br>
-{Explanation}
 
 <div markdown="block" class="alert alert-success">
 
@@ -736,8 +845,17 @@ The `meet` command in EduMate is used to suggest suitable meet-up locations and 
 </div>
 
 What you should see:<br>
-{GUI}<br>
-{Explanation}
+
+<img src="images/ug_cmds_pics/meet_cmd.png" style="width:80%;margin:0 10%">
+
+<center>Diagram 17: Recommended study spots and the common available days and timings displayed</center>
+
+<br>
+
+##### Explanation:
+
+After sorting your contacts, you decided to ask Astrid, Grover, Kevin and Alex from your CCA to study for CS2100. You can execute the `meet` command
+whilst referring to their index on the Person List and find out what are the most optimal places and the best possible time to meet and study for the final.
 
 <div markdown="block" class="alert alert-success">
 
@@ -747,6 +865,62 @@ What you should see:<br>
 * `study 6 2` : Recommends a meeting time and study spot for friends with the following indices `6 and 2`.
 
 </div>
+
+### Schedule Commands
+
+The `organise` command in EduMate is used to add meet ups with selected contacts, whether they are customised or recommended by the meet commands. It is useful for keeping track of your upcoming meetups in an organised and efficient way. In addition, EduMate also offers the `unorganise` command, which helps you manage and clean up scheduled meetups by removing them - making it easy to stay on top of your schedule.
+
+#### Organise a meet up `organise`
+
+<div markdown="block" class="alert alert-info">
+
+:information_source: **Format** (See [Interpreting Command Formats](#how-to-interpret-the-command-format)):<br>
+* `organise INDEX`
+* `organise INDEX_1 INDEX_2 ... d/DAY T/START_TIME END_TIME l/LOCATION`
+
+</div>
+
+What you should see:<br>
+
+<img src="images/ug_cmds_pics/organise_cmd.png" style="width:80%;margin:0 10%">
+<center>Diagram 18: A new meet up: Monday 8AM to 11AM at Queenstown Public Library is added to <code>EduMate</code>.</center>
+
+##### Explanation:
+After deciding you want to meet with Samantha and Ian, you execute the `meet` command to generate recommended timings and locations. Scrolling through the list of recommendations, you decide that Queenstown Public Library on a Monday morning sounds the best. You can then execute the `organise` command to add that recommendation to your scheduled meet ups list.
+
+<div markdown="block" class="alert alert-success">
+
+:bulb: **Example 1 : Adding a meet up from the recommendation list**<br>
+* `organise 1`: Adds the recommendation with index 1 on the [Meet Up Recommendation Panel](#meet-up-recommendation-panel) to the [Scheduled Meet Up Panel](#scheduled-meet-up-panel).
+
+:bulb: **Example 2 : Adding a customised meet up**<br>
+* `organise 1 3 d/TUESDAY T/10 11 l/Starbucks`: Adds a customised meet up with the following details to the [Scheduled Meet Up Panel](#scheduled-meet-up-panel):
+  * Participants: `contacts with index 1 and 3`
+  * Day: `TUESDAY`
+  * Start time: `10AM`
+  * End time: `11AM`
+  * Location: `Starbucks`
+
+</div>
+
+#### Unorganise a meet up `unorganise`
+
+If you wish to remove a scheduled meetup from your [Scheduled Meet Up Panel](#scheduled-meet-up-panel), simply use the `unorganise` command.
+
+<div markdown="block" class="alert alert-info">
+
+:information_source: **Format** (See [Interpreting Command Formats](#how-to-interpret-the-command-format)):<br>
+* `unorganise INDEX`
+
+</div>
+
+<div markdown="block" class="alert alert-success">
+
+:bulb: **Example : Removing a meet up from the scheduled meet up list**<br>
+* `unorganise 1`: Removes the scheduled meet up with index 1 on the [Scheduled Meet Up Panel](#scheduled-meet-up-panel).
+
+</div>
+
 
 ## Other Commands
 
@@ -780,23 +954,28 @@ suggest new features and it is easily extensible!
 | e/     | Email           | 
 | g/     | Group           | 
 | m/     | Module          | 
+| d/     | Day             |
+| l/     | Location        |
+| T/     | Time Period     |
 | "   "  | Empty           | 
 
 ### Command Summary
 
-| Action               | Format (See [Interpreting Command Formats](#how-to-interpret-the-command-format))      | Examples                                                    |
-|----------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| **Add a contact**    | `add n/NAME p/PHONE...`                                                                | `add n/Wen Li...`                                           |
-| **View a profile**   | `view`, `view INDEX`, `view n/NAME`                                                    | `view 5`, `view n/Wen Li`                                   |
-| **Edit a contact**   | `edit INDEX [z/FIELD]…​`, `edit [z/FIELD]…​`                                           | `edit 4 n/Wen Qing`, `edit s/NUS t/@wenqing`                |
-| **Delete a contact** | `delete INDEX`                                                                         | `delete 3`                                                  |
-| **Tag a contact**    | `tag INDEX m/MODULE...`, `tag m/MODULE...`, `tag INDEX g/GROUP`, `tag g/GROUP`         | `tag m/CS1234`, `tag m/CS2345 mon 12 1`, `tag 1 g/Friend`    |
-| **Untag a contact**  | `untag INDEX m/MODULE...`, `untag m/MODULE...`, `untag INDEX g/GROUP`, `untag g/GROUP` | `untag m/CS1234`, `untag m/CS2345 mon 12 1`, `tag 1 g/Friend` |
-| **Filter contacts**  | `find z/FIELD`                                                                         | `find n/Tan`, `find m/CS1231`                               |
-| **Sort contacts**    | `sort [z/a]…​`, `sort [z/d]…​`, `sort [z/]…​`                                          | `sort`, `sort n/a`, `sort m/ p/d`                           |
-| **Save a copy**      | `save FILE_NAME`                                                                       | `save backup`                                               |
-| **Load a copy**      | `load FILE_NAME`                                                                       | `load backup`                                               |
-| **Suggest meet ups**  | `meet [INDEX]…​`, `eat [INDEX]…​`, `study [INDEX]…​`                                   | `meet 1 6 4`, `eat 10 4 7`                                  |
+| Action                   | Format (See [Interpreting Command Formats](#how-to-interpret-the-command-format))    | Examples                                                       |
+|--------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| **Add a contact**        | `add n/NAME p/PHONE...`                                                              | `add n/Wen Li...`                                              |
+| **View a profile**       | `view`, `view INDEX`, `view n/NAME`                                                  | `view 5`, `view n/Wen Li`                                      |
+| **Edit a contact**       | `edit INDEX [z/FIELD]…​`, `edit [z/FIELD]…​`                                         | `edit 4 n/Wen Qing`, `edit s/NUS t/@wenqing`                   |
+| **Delete a contact**     | `delete INDEX`                                                                       | `delete 3`                                                     |
+| **Tag a contact**        | `tag INDEX m/MODULE...`, `tag m/MODULE...`, `tag INDEX g/GROUP`, `tag g/GROUP`       | `tag m/CS1234`, `tag m/CS2345 mon 12 1`, `tag 1 g/Friend`      |
+| **Untag a contact**      | `untag INDEX m/MODULE...`, `untag m/MODULE...`, `untag INDEX g/GROUP`, `untag g/GROUP` | `untag m/CS1234`, `untag m/CS2345 mon 12 1`, `untag 1 g/Friend` |
+| **Filter contacts**      | `find z/FIELD... z/FIELD...`                                                           | `find n/Tan`, `find m/CS1231`, `find n/Tan m/CS1231`           |
+| **Sort contacts**        | `sort [z/a]…​`, `sort [z/d]…​`, `sort [z/]…​`                                        | `sort`, `sort n/a`, `sort m/ p/d`                              |
+| **Save a copy**          | `save FILE_NAME`                                                                     | `save backup`                                                  |
+| **Load a copy**          | `load FILE_NAME`                                                                     | `load backup`                                                  |
+| **Suggest meet ups**     | `meet [INDEX]…​`, `eat [INDEX]…​`, `study [INDEX]…​`                                 | `meet 1 6 4`, `eat 10 4 7`                                     |
+| **Organise a meet up**   | `organise INDEX`, `organise [INDEX]... d/DAY T/START_TIME END_TIME l/LOCATION`       | `organise 1`, `organise 1 2 3 d/MONDAY T/10 12 l/NUS`          |
+| **Unorganise a meet up** | `unorganise INDEX` | `unorganise 1`                                                 |
 
 
 ## Troubleshooting
