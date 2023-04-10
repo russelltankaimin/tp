@@ -259,7 +259,7 @@ Not all modules that are tagged to the contact are shown on the Person List. If 
 The Meet Up Recommendation Panel (located at the top right of EduMate) suggests recommendations of optimal timings and locations
 where you can meet your friends.
 
-<img src="images/UG_ui_pictures/MeetUpRecommendationUnlabelled.svg" style="width:80%;margin:1% 1% 1% 10%">
+<img src="images/UG_ui_pictures/MeetUpRecommendationUnlabelled.png" style="width:80%;margin:1% 1% 1% 10%">
 
 <center>Diagram 6: Recommended timings and locations for meetups displayed</center>
 <br>
